@@ -3,7 +3,7 @@ using namespace std;
 
 char grid[105][105];
 bool visited[105][105];
-int level[105][105];
+int level[105][105]; // distance ber korar jonno level track rakha hoy
 vector<pair<int, int>> d = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 int n, m;
 bool valid(int i, int j)
