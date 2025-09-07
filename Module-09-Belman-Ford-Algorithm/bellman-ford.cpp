@@ -19,7 +19,8 @@ int n, e;
 
 void bellman_ford()
 {
-    for (int i = 0; i < n - 1; i++) // O(V)  //bellman-ford n-1 projonto loop chalai tai cycle thakleu infite loopa jaina
+    for (int i = 0; i < n - 1; i++) // O(V)  //bellman-ford n-1 projonto loop chalai tai cycle thakleu infite loopa jaina. n - 1 neoar reason holo protibar ekbar sob node traverse korle ekta node er shortest distance paoa jabei. ar src er distance 0 tai n-1
+
     {
         for (auto ed : edge_list) // edge relaxation  //O(E)
         {

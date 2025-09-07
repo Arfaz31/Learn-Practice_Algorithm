@@ -29,7 +29,7 @@ int main()
         // adj_mat[b][a] = w; // for undirected graph
     }
 
-    for (int k = 0; k < n; k++)
+    for (int k = 0; k < n; k++) // k holo intermediate node. karon protibar k er ekta man diye sob i->k->j jaoar distance check hobe.
     {
         for (int i = 0; i < n; i++)
         {
@@ -43,7 +43,7 @@ int main()
         }
     }
 
-       for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {

@@ -10,13 +10,13 @@ void dfs(int src)
     vis[src] = true;
     for (int child : adj_list[src])
     {
-        if (vis[child] && parent[src] != child)
+        if (vis[child] && parent[src] != child) // parent er parent != child hole cycle ache. suppose src = 1, 1 er parent 0, and 0 theke both 1,2 te jaoa jai, first time ei as a first src hisebe both 1 and 2 visited. ekhon parent[1] == 0 hole cycle nei(karon 1 er parent holo 0 so 0 == 0) but parent[1] != 2 hole cycle ache(bcz 0 != 2)
         {
             cycle = true;
         }
         if (!vis[child])
         {
-            parent[child] = src;
+            parent[child] = src; // child er parent hobe src
             dfs(child);
         }
     }
