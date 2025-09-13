@@ -5,18 +5,24 @@ int dp[1005][1005];
 
 int knapsack(int i, int mx_weight)
 {
+    // base case: no items or no capacity left
     if (i < 0 || mx_weight <= 0)
     {
         return 0;
     }
+
+    // if already calculated, return from dp
     if (dp[i][mx_weight] != -1)
     {
         return dp[i][mx_weight];
     }
 
+    // if current item can fit into remaining capacity
     if (wt[i] <= mx_weight)
     {
+        // option 1: take this item
         int op1 = knapsack(i - 1, mx_weight - wt[i]) + val[i];
+        // option 2: skip this item
         int op2 = knapsack(i - 1, mx_weight);
         dp[i][mx_weight] = max(op1, op2);
         return dp[i][mx_weight];
